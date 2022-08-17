@@ -47,7 +47,7 @@ fastify.get('/transactions/new', async (request, reply) => {
     });
 });
 
-fastify.post('/redemptions', async (request, reply) => {
+fastify.get('/redemptions', async (request, reply) => {
     const originMerchantId = request.query.origin;
     const destinationMerchantId = request.query.destination;
     const userId = request.query.user;
