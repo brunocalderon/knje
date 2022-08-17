@@ -1,0 +1,8 @@
+# Package directories
+node_modules
+# Serverless directories
+.serverless
+# Env files
+.env
+# Mac files
+.DS_Store

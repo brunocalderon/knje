@@ -1,0 +1,28 @@
+{
+  "name": "knje",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunocalderon/knje.git"
+  },
+  "author": "Bruno Calderon <b@bcalderon.com> (https://bcalderon.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunocalderon/knje/issues"
+  },
+  "homepage": "https://github.com/brunocalderon/knje#readme",
+  "dependencies": {
+    "@fastify/static": "^6.5.0",
+    "@fastify/view": "^7.1.0",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.4",
+    "ejs": "^3.1.8",
+    "fastify": "^4.4.0"
+  }
+}
