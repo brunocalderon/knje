@@ -63,7 +63,8 @@ fastify.get('/redemptions', async (request, reply) => {
 const start = async () => {
     try {
         await fastify.listen({
-            port: process.env.PORT || 3000,
+            host: '0.0.0.0',
+            port: process.env.PORT,
         })
     } catch (err) {
         fastify.log.error(err)
