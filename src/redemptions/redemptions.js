@@ -11,7 +11,7 @@ const sendEmailConfirmation = async (userData, merchantData, randomCode) => {
         name: userData.fields['User Name'],
         brand: merchantData.fields['Merchant Name'],
         code: randomCode,
-        url: merchantData.fields['Websites'],
+        url: merchantData.fields['Website'],
     });
     return true;
 }
