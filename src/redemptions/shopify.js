@@ -47,5 +47,10 @@ const createShopifyDiscountCode = async (merchantConnectionMetadata, priceRuleId
     return data.discount_code.code;
 };
 
-module.exports.createShopifyPriceRule = createShopifyPriceRule;
-module.exports.createShopifyDiscountCode = createShopifyDiscountCode;
+const createShopifyDiscount = async (merchantConnectionMetadata, randomCode, redeemedAmount) => {
+    const priceRuleId = await createShopifyPriceRule(merchantConnectionMetadata, randomCode, redeemedAmount);
+    await createShopifyDiscountCode(merchantConnectionMetadata, priceRuleId, randomCode);
+    return true;
+}
+
+module.exports.createShopifyDiscount = createShopifyDiscount;
