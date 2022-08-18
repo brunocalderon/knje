@@ -1,6 +1,6 @@
 // Require the framework and instantiate it
 const fastify = require('fastify')({
-    logger: false
+    logger: true
 });
 const path = require('path');
 
@@ -37,7 +37,7 @@ fastify.get('/transactions/new', async (request, reply) => {
         destination: destinationMerchantId,
         user: userId,
         title: 'Nuevo Knje',
-        brand: 'Komono',
+        brand: destinationMerchantData.fields['Merchant Name'],
         createTransactionButtonText: 'Knjear',
         availableBalance: clpLocale.format(originMerchantData.fields['Merchant Balance']),
         min: minAmount,
@@ -71,4 +71,4 @@ const start = async () => {
         process.exit(1)
     }
 }
-start()
+start();

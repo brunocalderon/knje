@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const getAirtableSiteConnection = async (merchantId) => {
+const getAirtableMerchantData = async (merchantId) => {
     const config = {
         url: `https://api.airtable.com/v0/${process.env.airtableBaseId}/Merchants/${merchantId}`,
         method: 'get',
@@ -13,9 +13,9 @@ const getAirtableSiteConnection = async (merchantId) => {
     return data;
 }
 
-const getAirtableMerchantData = async (merchantId) => {
+const getAirtableUserData = async (userId) => {
     const config = {
-        url: `https://api.airtable.com/v0/${process.env.airtableBaseId}/Merchants/${merchantId}`,
+        url: `https://api.airtable.com/v0/${process.env.airtableBaseId}/Users/${userId}`,
         method: 'get',
         headers: {
             'Authorization': `Bearer ${process.env.airtableToken}`,
@@ -66,6 +66,6 @@ const createAirtableTransaction = async (originMerchantId, destinationMerchantId
     }
 }
 
-module.exports.getAirtableSiteConnection = getAirtableSiteConnection;
 module.exports.getAirtableMerchantData = getAirtableMerchantData;
+module.exports.getAirtableUserData = getAirtableUserData;
 module.exports.createAirtableTransaction = createAirtableTransaction;
